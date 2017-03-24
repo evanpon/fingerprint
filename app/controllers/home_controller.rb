@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   end
 
   def search
-    @results = SemanticsClient.get_products(params[:search_term])
+    @search_term = params[:search_term]
+    @results = SemanticsClient.get_products(@search_term)
     render(:index)
   end
 end

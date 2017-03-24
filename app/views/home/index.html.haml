@@ -1,11 +1,16 @@
-= form_tag(home_search_path) do
-  = text_field_tag(:search_term, '')
-  = submit_tag("Search", name: nil)
+.header
+  %span.page-title.left
+    Code Test
+  = form_tag(home_search_path) do
+    = text_field_tag(:search_term, @search_term, placeholder: 'Search for a product')
+    = submit_tag("Search", name: nil)
   
 
 - if @results
   %ul
     - @results.each do |result|
-      %li
-        %h1= result['name']
+      %li.clear
+        .left
+          %img.product_image{src: result['images'].first}
+        %h2= result['name']
         = result['description']
