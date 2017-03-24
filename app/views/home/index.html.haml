@@ -1,0 +1,11 @@
+= form_tag(home_search_path) do
+  = text_field_tag(:search_term, '')
+  = submit_tag("Search", name: nil)
+  
+
+- if @results
+  %ul
+    - @results.each do |result|
+      %li
+        %h1= result['name']
+        = result['description']
