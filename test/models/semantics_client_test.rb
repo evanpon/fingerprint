@@ -28,6 +28,21 @@ class SemanticsClientTest < ActiveSupport::TestCase
     end
   end
   
+  test 'can handle multiple sellers' do
+    client = SemanticsClient.new
+    VCR.use_cassette("multiple_sellers", record: :once) do
+      products = client.search_for_products('cord', 1)
+      sellers = products.first['sellers']
+      assert_equal(3, sellers.count)
+      sellers.each do |seller|
+        assert_not_empty(seller['name'])
+        assert_match(/https?:\/\/.*\..*/, seller['url'])
+        assert_match(/\d+\.\d+/, seller['price'])
+      end
+    end
+  end
+    
+  
   def assert_can_parse_products_from_json(products)
     assert_equal(10, products.count)
     products.each do |product|
