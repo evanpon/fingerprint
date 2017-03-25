@@ -16,7 +16,7 @@ class ProductSearcher
     if result = pull_from_cache(search_term, page)
       JSON.parse(result.content)
     else 
-      response = @semantics_client.get_products(search_term)
+      response = @semantics_client.search_for_products(search_term, page)
       # Rather than trying to update the timestamp on any existing but outdated cache rows,
       # just insert a new row. All the old rows will be reaped anyway, and this will be simpler.
 
@@ -25,7 +25,6 @@ class ProductSearcher
       # Additionally, JSON serialization can be slow compared to Marshal or MsgPack. I'm choosing to use it here
       # because there is no current need to optimize, and it allows for easy inspection of the data in the cache.
       serialized_content = JSON.generate(response)
-      File.write(search_term, serialized_content)
       SearchResultPage.create(search_term: search_term, page: page, content: serialized_content)
       response
     end

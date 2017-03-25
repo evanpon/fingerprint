@@ -11,6 +11,6 @@
     - @results.each do |result|
       %li.clear
         .left
-          %img.product_image{src: result['images'].first}
+          %img.product_image{src: result['image']}
         %h2= result['name']
         = result['description']
