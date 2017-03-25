@@ -10,7 +10,8 @@
   %ul
     - @results.each do |result|
       %li.clear
-        .left
-          %img.product_image{src: result['image']}
+        .image-container.left
+          - image_source = result['image'] || 'http://sem3-idn.s3-website-us-east-1.amazonaws.com/b1605b889f83108adaf68d36ba3345bb,0.jpg'
+          %img.product_image{src: image_source}
         %h2= result['name']
         = result['description']

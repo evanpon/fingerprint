@@ -11,9 +11,12 @@
   font-size: 40px;
   margin: 10px 20px;
 }
-.product_image {
-  height: 100px;
+.image-container {
+  width: 100px;
   margin: 0 20px 20px 0;
+}
+.product_image {
+  width: 100%;
 }
 input[type=text] {
   font-size: 20px;
