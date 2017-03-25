@@ -1,0 +1,145 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.semantics3.com/v1/products?q=%7B%22search%22:%22monitor%22,%22activeoffersonly%22:1,%22activesitesonly%22:1%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - OAuth gem v0.5.1
+      Authorization:
+      - OAuth oauth_consumer_key="SEM3C831DE14C89CD4341DC77811C4BE7447", oauth_nonce="vtkjKRNCeVDSCEpQUEw5OJQkJitOtV79Qu1i6ATL0pE",
+        oauth_signature="xtr7OeJ5%2Bvx%2BC4JpeRIT4slV5sQ%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1490402681", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 25 Mar 2017 00:44:42 GMT
+      Server:
+      - nginx
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '6574'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"OK","offset":0,"results_count":10,"results":[{"studio":"Chemical
+        Monitor","sitedetails":[{"name":"amazon.com","recentoffers_count":1,"latestoffers":[{"lastrecorded_at":1489335300,"id":"4kN4x4H21wquEGQA6ig0w0","price":"95.00","currency":"USD","seller":"Amazon.com","firstrecorded_at":1489335300,"isactive":1}],"url":"http://www.amazon.com/dp/B000INBTIQ","sku":"B000INBTIQ"}],"images_total":0,"sem3_id":"5WHjTdXYdEOYeEUCO8k4Ue","category":"Uncategorized","manufacturer":"Chemical
+        Monitor","created_at":1454800858,"features":{"Shipping":"Currently, item can
+        be shipped only within the U.S."},"updated_at":1489335362,"cat_id":"25459","format":"Magazine
+        Subscription","label":"Chemical Monitor","publisher":"Chemical Monitor","price":"95.00","brand":"Chemical
+        Monitor","language":"English","name":"Chemical Monitor []","geo":["usa"],"price_currency":"USD","images":[],"messages":[],"gtins":[]},{"name":"HP
+        Business P17A 17\" LED LCD Monitor","weight":"3719457.43","manufacturer":"HP-MONITORS
+        SB","category":"Electronics","width":"378.46","images_total":1,"description":"17IN
+        LED PRODISPLAY P17A","size":"17\"","sem3_id":"6AdpdAyDuwyAgi26SMIgmu","mpn":"F4M97A8#ABA","updated_at":1490084419,"created_at":1392100591,"brand":"HP
+        MONITORS SB","cat_id":"13658","sitedetails":[{"latestoffers":[{"seller":"ANTOnline","currency":"USD","firstrecorded_at":1480622900,"lastrecorded_at":1480622900,"availability":"Available","price":"133.24","id":"1n3T4OmoSyOsm24WekUiWu","isactive":1}],"name":"antonline.com","url":"http://www.antonline.com/p_HP-MONITORS-SB--F4M97A8#ABA--HP-PROMO-PRODISPLAY-P17A-LED-MONITOR_1091888.htm","sku":"1091888","recentoffers_count":1},{"latestoffers":[{"availability":"In
+        Stock","lastrecorded_at":1458253000,"price":"126.60","id":"6TarbYuJnsqi06UGQaGkki","condition":"Brand
+        New Factory Sealed with Full USA Warranty","currency":"USD","seller":"DataVision
+        Computer Video","firstrecorded_at":1455331100,"isactive":1}],"name":"datavis.com","url":"http://www.datavis.com/cgi-bin/product.cgi?prrfnbr=726516","sku":"726516","recentoffers_count":1}],"price":"133.24","model":"F4M97A8#ABA","images":["http://sem3-idn.s3-website-us-east-1.amazonaws.com/ee12c414d6647771c7d76406fafce073,0.jpg"],"upc":"888182138076","color":"Black","features":{"Product
+        Line":"Business","AVG22WBV-2D":"$193.69","E2050SWD":"$96.95","P2370SD":"$128.23","Warranty":"Limited
+        Warranty","S24E450D":"$233.57","EA244WMI-BK":"$399.44","E719SD":"$108.53","M1N98A8#ABA":"$194.97","22MB35DM-I":"$140.42","Mount
+        Type":"Wall Mountable","K0Q34AA#ABA":"$294.34","Standby Power Consumption":"500
+        mW","VX2270SMH-LED":"$158.69","Product Type":"LCD Monitor","UM.FV6AA.005":"$188.30","D7Q13A4#ABA":"$376.49","Physical
+        Characteristics":"Color","UM.IV6AA.A01":"$117.72","Depth with Stand":"8.12\"","Technical
+        Information":"Number of Screens","E1916H":"$106.92","Green Compliant":"Yes","241B4LPYCB":"$186.98","MX239H":"$206.94","UM.BV6AA.002":"$121.39","469-4030":"$463.94","Horizontal
+        Viewing Angle":"170","60CFGAR1US":"$229.99","Tilt Angle":"-5to25","blob":"5:4;
+        5 ms; LED monitor; Smart Buy; 17\"; 1280 x 1024; TN; 250 cd/m2; 1000:1; 5
+        ms; VGA; black; Security Lock","Adjustable Display Angle":"Yes","PA249Q":"$522.07","469-4320":"$205.09","F4M97AA#ABA":"$523.98","E1715S":"$144.14","UM.QG6AA.001":"$201.33","Backlight
+        Technology":"LED","Response Time":"5 ms","462-3771":"$288.29","Off-Mode Power
+        Consumption":"140 mW","Width with Stand":"14.85\"","UM.QB6AA.B01":"$237.11","Height
+        with Stand":"15.24\"","UM.CV6AA.002":"$118.86","K7B99A8#ABA":"$344.92","997-6958-00":"$144.98","VA2055SM":"$114.13","VS239H-P":"$154.13","Brightness":"250
+        Nit","60D7LAR1US":"$249.15","VA2249S":"$132.86","17S4LSB":"$117.63","S24E650PL":"$650.28","Color
+        Supported":"16.7 Million Colors","C9V73A8#ABA":"$164.98","Weight (Approximate)":"5.54
+        lb","Operating Power Consumption":"20 W","Screen Surface":"Anti-glare","Weight
+        with Stand (Approximate)":"8.20 lb","469-4375":"$249.10","Power Description":"Input
+        Voltage","UM.BV6AA.003":"$128.72","AS172-BK":"$161.08","Miscellaneous":"Package
+        Contents","UM.BV6AA.001":"$128.72","Panel Technology":"Twisted Nematic Film
+        (TN Film)","VG2228WM-LED":"$177.49","E2476VWM6":"$176.81","E171M-BK":"$181.07","Interfaces/Ports":"VGA","24MB35PY-B":"$201.10","Screen
+        Mode":"SXGA","Video":"Maximum Resolution","Product Model":"P17A","Horizontal
+        Frequency":"83 kHz","Contrast Ratio":"1,000:1","Aspect Ratio":"5:4","K0Q34A6#ABA":"$130.93","E2425SWD":"$143.78","VA705-LED":"$137.02","90LM01Q0-B013B0":"$166.13","VH238H":"$146.38","24MC37D-B":"$148.56","3R3XN":"$233.14","Features":"Security
+        Lock","VA2465SMH":"$171.72","Vertical Viewing Angle":"160","VA708A":"$139.50","60C7MAR1US":"$313.70","S24D300H":"$210.57","Manufacturer
+        Website Address":"http://www.hp.com","Standard Refresh Rate":"60 Hz","Screen
+        Size":"17\""},"ean":"0888182138076","height":"317.50","geo":["usa"],"price_currency":"USD","messages":[],"gtins":["00888182138076"]},{"updated_at":1490169212,"name":"7\"
+        USB LCD Monitor","weight":"771107.03","description":"NON TOUCH 7 Smart USB
+        LCD Monitor utilizes USB for... (visit site URLs for full description)","price":"111.35","created_at":1374504105,"ean":"0816220000757","images_total":1,"category":"Monitors","height":"114.30","features":{"Product
+        Model":"DS-70U","AC":"Not Required","DS-10U":"$157.86","Manufacturer Website
+        Address":"http://www.doublesight.com","Screen Mode":"WVGA","Miscellaneous":"Additional
+        Information","Brightness":"375 Nit","Aspect Ratio":"16:10","blob":"Files;","Width
+        with Stand":"7\"","Weight (Approximate)":"1 lb","Warranty":"Limited Warranty","Depth
+        with Stand":"4\"","Video":"Maximum Resolution","Height with Stand":"8\"","Physical
+        Characteristics":"Height","Response Time":"30 ms","Vertical Viewing Angle":"90","Screen
+        Size":"7\"","Technical Information":"Number of Screens","Power Consumption":"3.3
+        ~ 4.9W","Product Type":"LCD Monitor","Color Supported":"16.7 Million Colors","Contrast
+        Ratio":"350:1","Horizontal Viewing Angle":"130","Interfaces/Ports":"USB"},"sem3_id":"3pQs6bvvGq44eqo8ScweCy","model":"DS
+        70U","sitedetails":[{"recentoffers_count":3,"sku":"B00AIZIHTI","latestoffers":[{"shipping":"507","price":"111.35","lastrecorded_at":1488502300,"firstrecorded_at":1488502300,"seller":"TJ-MAX","id":"4jVsKeNDAWGoIogaga0Uqe","currency":"USD","isactive":1},{"price":"120.95","availability":"Available
+        [FPO: Front Page Offer]","lastrecorded_at":1488502300,"currency":"USD","seller":"MegaRetailStore","firstrecorded_at":1488502300,"id":"7YiW5MpYm0aE8cqKKAAeQw","isactive":1},{"lastrecorded_at":1488502300,"availability":"Available
+        [FPO: Front Page Offer]","price":"114.34","id":"0yojAR7rzCyquIsgUaGymg","seller":"Brooklyn
+        Parkway","firstrecorded_at":1488502300,"currency":"USD","isactive":1}],"url":"http://www.amazon.com/dp/B00AIZIHTI","name":"amazon.com"},{"url":"http://www.datavis.com/cgi-bin/product.cgi?prrfnbr=526927","recentoffers_count":1,"name":"datavis.com","latestoffers":[{"condition":"Brand
+        New Factory Sealed with Full USA Warranty","currency":"USD","id":"29j5CfCWE0auGWSsuSue6I","seller":"DataVision
+        Computer Video","firstrecorded_at":1457665900,"lastrecorded_at":1458216800,"availability":"In
+        Stock","price":"117.23","isactive":1}],"sku":"526927"},{"url":"http://www.antonline.com/p_Doublesight_733194.htm","name":"antonline.com","listprice":"149.00","sku":"733194","latestoffers":[{"availability":"Available","price":"135.40","lastrecorded_at":1480592800,"currency":"USD","id":"56v8HKCqwKYYk0Aawsc6mS","firstrecorded_at":1453949800,"seller":"ANTOnline","isactive":1}],"recentoffers_count":1,"listprice_currency":"USD"},{"name":"officemax.com","url":"http://www.officemax.com/technology/monitors/product-prod5012033","recentoffers_count":1,"sku":"prod5012033","latestoffers":[{"id":"7UNZE1zJo0WcOA8GE86CMc","seller":"Office
+        Max","firstrecorded_at":1407042600,"currency":"USD","lastrecorded_at":1407042600,"availability":"Available","price":"149.00","isactive":1}]},{"recentoffers_count":1,"name":"walmart.com","url":"http://www.walmart.com/ip/41441536","sku":"41441536","latestoffers":[{"id":"3CBjtD2K7EQs4O26c4SIUq","firstrecorded_at":1487577800,"seller":"Beach
+        Audio Inc","currency":"USD","lastrecorded_at":1487577800,"availability":"Available","price":"118.38","isactive":1}]},{"sku":"restockit_doublesight-displays-ds-70u-lcd-display-tft-7-quot-num-ca2644","latestoffers":[{"seller":"ReStockIt","firstrecorded_at":1489849700,"id":"0WbbHM7HLcGu4EGSmeOQKC","currency":"USD","condition":"New","price":"128.50","availability":"Available","lastrecorded_at":1490169200,"isactive":1}],"name":"restockit.com","recentoffers_count":1,"url":"http://www.restockit.com/doublesight-displays-ds-70u-lcd-display-tft-7-quot-num-ca2644.html"}],"images":["http://sem3-idn.s3-website-us-east-1.amazonaws.com/ee034b691422834cb30d1f08266ed80a,0.jpg"],"brand":"DoubleSight
+        Displays","cat_id":"12460","manufacturer":"DoubleSight Displays","width":"177.80","upc":"816220000757","mpn":"DS-70U","variation_secondaryids":["3Ikq4Gux2WKuqUywQ0SMwW","3h40HR6y9A8Omk4kqkkkQu"],"geo":["usa"],"price_currency":"USD","messages":[],"gtins":["00816220000757"]},{"sitedetails":[{"recentoffers_count":1,"url":"http://www.walmart.com/ip/53735124","latestoffers":[{"id":"5EprpghAps6Aoc0GSGW8UW","price":"65.44","lastrecorded_at":1472110500,"seller":"Walmart","availability":"Available","firstrecorded_at":1472110500,"currency":"USD","isactive":1}],"sku":"53735124","name":"walmart.com"}],"description":"Ideal
+        for the home or office, the Refurbished HP 1... (visit site URLs for full
+        description)","features":{"blob":"0.294mm pixel pitch; 1280 x 1024 resolution;
+        16ms response time; 19\" diagonal LCD screen; Colors","Assembled Product Dimensions
+        (L x W x H)":"17.80 x 9.30 x 16.00 Inches","Response Time":"16ms","Condition":"Refurbished","Aspect
+        Ratio":"5:4","Resolution":"1280 x 1024","Brightness":"250cd/m2","Screen Size":"19\"","Connector
+        Type":"VGA , DVI"},"mpn":"WA7-40008","category":"Computers & Accessories","created_at":1472110513,"upc":"825633402485","brand":"Monitor","manufacturer":"HP","updated_at":1472110513,"cat_id":"4992","price":"65.44","images":["http://sem3-idn.s3-website-us-east-1.amazonaws.com/1f123340c0cbbe94c10044c598c0fcb0,0.jpg"],"model":"HP","images_total":1,"name":"Refurbished
+        HP 19\" LCD Monitor (HP Black)","sem3_id":"5VSqfuPduwwkOQgkUIMwY4","ean":"0825633402485","geo":["usa"],"price_currency":"USD","messages":[],"gtins":["00825633402485"]},{"sem3_id":"0lMuac4qGq6sUASeWG6MMu","category":"Monitors","images":["http://sem3-idn.s3-website-us-east-1.amazonaws.com/38e461faa2a3711fcb307dd871b2778e,0.jpg"],"name":"Acer
+        V206HQL 19.5\" LED LCD Monitor - 16:9 - 8 ms","sitedetails":[{"recentoffers_count":1,"url":"https://www.overstock.com/Electronics/Acer-V206HQL-19.5-LED-LCD-Monitor-16-9-8-ms/13283781/product.html","sku":"13283781_22008946","latestoffers":[{"lastrecorded_at":1489284800,"id":"7aXm14v62aOOwSiwme0A2a","seller":"Overstock","firstrecorded_at":1489284800,"price":"124.99","currency":"USD","availability":"Available","isactive":1}],"name":"overstock.com"}],"images_total":1,"variation_id":"3ub3pCCme0QW2MkIW6OoG2Y6","brand":"Acer
+        Monitors","created_at":1483817933,"updated_at":1489284822,"price":"124.99","cat_id":"12460","geo":["usa"],"price_currency":"USD","messages":[],"gtins":[]},{"updated_at":1489253590,"features":{"blob":"Monitor
+        Case","Compatibility":"BEM-072/072H, FM-073SC/073SCH and RM-072S Monitors"},"name":"Bon
+        Monitors Carrying Pouch for FM-052SC Monitor","mpn":"POUCH-05","category":"Electronics","sem3_id":"3dgaPshHz6ksokYy8owcKu","images_total":1,"created_at":1482035833,"price":"139.94","brand":"Bon
+        Monitors","cat_id":"13658","images":["http://sem3-idn.s3-website-us-east-1.amazonaws.com/05c1fbbf533305b311bdaf21696befdc,0.jpg"],"model":"VIP360","sitedetails":[{"recentoffers_count":1,"name":"adorama.com","latestoffers":[{"lastrecorded_at":1489253500,"price":"139.94","firstrecorded_at":1482035800,"currency":"USD","id":"3MnL1FXulkkkuW6AKUiO8Y","seller":"Adorama","isactive":1}],"sku":"bmpouch05","url":"http://www.adorama.com/bmpouch05.html"},{"name":"adorama.com","recentoffers_count":1,"latestoffers":[{"id":"3cAjAR535UEOoweEEeWSAS","seller":"Adorama","currency":"USD","firstrecorded_at":1482035600,"price":"169.95","lastrecorded_at":1489253500,"isactive":1}],"sku":"bmpouch07","url":"http://www.adorama.com/bmpouch07.html"}],"description":"The
+        Bon Monitors Carrying Pouch is specially desig... (visit site URLs for full
+        description)","geo":["usa"],"price_currency":"USD","messages":[],"gtins":[]},{"price":"130.94","created_at":1472780972,"cat_id":"14757","updated_at":1489824958,"weight":"31751.47","features":{"Item":"Incident
+        Monitor","For Use With Grainger Item Number":"4HDP2, 4HDP3, 4HDP4, 4HDP5,
+        4HDP6, 4HDP7, 4HDP8, 4HDP9, 4HDR1, 4HDR2, 4HDR3, 4HDR4, 4HDR5, 4HDR6, 4HDR7,
+        4HDR8, 4HDR9, 4HDT1, 4HDT5, 4HDT6, 4HDT7"},"sem3_id":"4iISYffXAe2sI2UWscO0G2","images_total":1,"sitedetails":[{"recentoffers_count":1,"name":"grainger.com","sku":"PARKER-Incident-Monitor-For-4HDP2-5KCU7","url":"https://www.grainger.com/product/PARKER-Incident-Monitor-For-4HDP2-5KCU7","latestoffers":[{"lastrecorded_at":1489824900,"seller":"W.W
+        Grainger, Inc.","availability":"Available","id":"4wMk8Z4kzwK0a4SueKYKAQ","currency":"USD","firstrecorded_at":1483703800,"price":"130.94","isactive":1}]}],"model":"DPM","category":"Replacement
+        Parts","mpn":"5KCU7","images":["http://sem3-idn.s3-website-us-east-1.amazonaws.com/dc6173ebdf786375940967914765e900,0.jpg"],"name":"Incident
+        Monitor","brand":"PARKER","description":"Use to indicate premature high differential
+        in fil... (visit site URLs for full description)","geo":["usa"],"price_currency":"USD","messages":[],"gtins":[]},{"features":{"Compatibility":"BEM-072/H
+        Monitors","blob":"Monitor Stands"},"updated_at":1489253423,"mpn":"AP-212","name":"Bon
+        Monitors Acrylic Screen Protector for BEM-212 Monitor","category":"Computers
+        & Accessories","images_total":1,"sem3_id":"0i4smAnm2KE0IiAos0qEgg","price":"130.00","created_at":1482035695,"cat_id":"4992","brand":"Bon
+        Monitors","model":"VIP360","images":["http://sem3-idn.s3-website-us-east-1.amazonaws.com/b0f3f154579ba34782f5ac356144df9e,0.jpg"],"sitedetails":[{"latestoffers":[{"id":"4nsWqiwLYuoKi24oGi0Yu2","seller":"Adorama","currency":"USD","price":"130.00","firstrecorded_at":1482035600,"lastrecorded_at":1489101600,"isactive":1}],"name":"adorama.com","recentoffers_count":1,"url":"http://www.adorama.com/bmap212.html","sku":"bmap212"},{"recentoffers_count":1,"name":"adorama.com","latestoffers":[{"firstrecorded_at":1487147900,"price":"139.00","lastrecorded_at":1489101600,"id":"7B9VEUHSiG0qU8S4S2S6kg","seller":"Adorama","currency":"USD","isactive":1}],"url":"https://www.adorama.com/bmts242.html","sku":"bmts242"},{"sku":"bmts072","url":"https://www.adorama.com/bmts072.html","recentoffers_count":1,"name":"adorama.com","latestoffers":[{"currency":"USD","id":"4v2VoLPM9IuuKqA0cs2Cmy","seller":"Adorama","lastrecorded_at":1489253400,"price":"169.00","firstrecorded_at":1487148000,"isactive":1}]}],"description":"The
+        Bon Monitors Acrylic Screen Protector is speci... (visit site URLs for full
+        description)","geo":["usa"],"price_currency":"USD","messages":[],"gtins":[]},{"description":"Help
+        drive office productivity with the affordable... (visit site URLs for full
+        description)","sitedetails":[{"latestoffers":[{"price":"154.99","firstrecorded_at":1488719000,"currency":"USD","lastrecorded_at":1488719000,"availability":"Available","id":"5lBR7dzDxAcgSGY0E6cWqO","seller":"Overstock","isactive":1}],"recentoffers_count":1,"name":"overstock.com","sku":"10901845_16841889","url":"http://www.overstock.com/Electronics/Dell-E2316Hr-23-LED-LCD-Monitor-16-9-5-ms/10901845/product.html"}],"category":"Computers
+        & Accessories","cat_id":"4992","created_at":1473106022,"variation_id":"5nTGq3YgRyaeQOESeqSCUmY6","updated_at":1488719084,"sem3_id":"1a4iTF4WRkEqMywy6gyI2E","manufacturer":"Dell,
+        Inc","images_total":1,"brand":"Dell Monitors","price":"154.99","features":{"Color
+        Supported":"16.7 Million Colors","Packaged Quantity":"1","Green Compliant":"Yes","Aspect
+        Ratio":"16:9","Maximum Resolution":"1920 x 1080","Contrast Ratio":"1,000:1","Screen
+        Mode":"Full HD","Height with Stand":"20\"","Green Compliance Certificate/Authority":"EPEAT
+        Gold","VGA":"Yes","Number of Screens":"1","Response Time":"5 ms","Screen Size":"23\"","DisplayPort":"Yes","Backlight
+        Technology":"LED","Platform Supported":"PC","Product Type":"LCD Monitor","VESA
+        Mount Compatible":"Yes","Brightness":"250 Nit","Weight with Stand (Approximate)":"4
+        lb","Manufacturer Website Address":"http://www.dell.com"},"name":"Dell E2316Hr
+        23\" LED LCD Monitor - 16:9 - 5 ms","images":["http://sem3-idn.s3-website-us-east-1.amazonaws.com/e18791a061cc46f9ffa4a4cff0c7f3a3,0.jpg"],"geo":["usa"],"price_currency":"USD","messages":[],"gtins":[]},{"color":"Black/Fuchsia","description":"Instant
+        heart rate monitoring, right at your wrist... (visit site URLs for full description)","images_total":1,"category":"Uncategorized","name":"Thrive
+        Monitor","variation_id":"5FDPRTAz6GqWgOamyUGQWoTO","updated_at":1490011338,"sem3_id":"6vTJTbOgZk8gmmmouSmUKs","created_at":1459245109,"features":{"blob":"Wrist
+        based HRM; 3D accelerometer; Distance; Pace/speed; Calories burned; Step counter;
+        Sleep pattern tracking; Vibration Alerts; Wakeup alert; Incoming text/call
+        alerts; Find my phone; Bluetooth upload","Material":"Plastic","Warranty":"1
+        year warranty"},"images":["http://sem3-idn.s3-website-us-east-1.amazonaws.com/1580df5f99e092faba4804100c1e37b7,0.jpg"],"price":"129.00","cat_id":"25459","brand":"Soleus","sitedetails":[{"listprice_currency":"USD","latestoffers":[{"id":"1QW0HEoImmCkyksSyek2Ak","price":"129.00","firstrecorded_at":1459245100,"seller":"eBags,
+        Inc","currency":"USD","availability":"Available","lastrecorded_at":1490011300,"isactive":1}],"recentoffers_count":1,"sku":"311904_10417464","listprice":"129.00","url":"http://www.ebags.com/product/soleus/thrive-monitor/311904","name":"ebags.com"}],"geo":["usa"],"price_currency":"USD","messages":[],"gtins":[]}],"total_results_count":100000}'
+    http_version: 
+  recorded_at: Sat, 25 Mar 2017 00:44:42 GMT
+recorded_with: VCR 3.0.3
