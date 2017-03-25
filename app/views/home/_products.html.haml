@@ -1,0 +1,13 @@
+%ul
+  - @products.each do |product|
+    %li.clear
+      .image-container.left
+        - image_source = product['image'] || 'http://sem3-idn.s3-website-us-east-1.amazonaws.com/b1605b889f83108adaf68d36ba3345bb,0.jpg'
+        %img.product_image{src: image_source}
+      %h2.mb1= product['name']
+      = product['description'].length >= 50 ? "#{product['description']}..." : product['description']
+      %ul.mt1
+        - product['sellers'].each do |seller|
+          %li
+            = "$#{seller['price']} at "
+            = link_to(seller['name'], seller['url'])

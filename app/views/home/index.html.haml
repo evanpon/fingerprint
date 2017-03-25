@@ -1,22 +1,11 @@
 .header
   %span.page-title.left
     Code Test
-  = form_tag(home_search_path) do
-    = text_field_tag(:search_term, @search_term, placeholder: 'Search for a product')
+  = form_tag(home_search_path, remote: true, authenticity_token: true) do
+    = text_field_tag(:search_term, @search_term, placeholder: 'Search for a product', tabindex: 1)
     = submit_tag("Search", name: nil)
   
 
-- if @results
-  %ul
-    - @results.each do |result|
-      %li.clear
-        .image-container.left
-          - image_source = result['image'] || 'http://sem3-idn.s3-website-us-east-1.amazonaws.com/b1605b889f83108adaf68d36ba3345bb,0.jpg'
-          %img.product_image{src: image_source}
-        %h2.mb1= result['name']
-        = result['description'].length >= 50 ? "#{result['description']}..." : result['description']
-        %ul.mt1
-          - result['sellers'].each do |seller|
-            %li
-              = "$#{seller['price']} at "
-              = link_to(seller['name'], seller['url'])
+#products
+  - if @products
+    = render(partial: 'products')
