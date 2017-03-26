@@ -4,7 +4,7 @@ class SemanticsClientTest < ActiveSupport::TestCase
 
   test 'can successfully retrieve data from Semantics' do
     client = SemanticsClient.new
-    VCR.use_cassette("successful_response", record: :once) do
+    VCR.use_cassette("semantics_client_test/successful_response", record: :once) do
       results = client.search_for_products('iphone', 1)
       assert_can_parse_products_from_json(results['products'])
     end
@@ -13,7 +13,7 @@ class SemanticsClientTest < ActiveSupport::TestCase
   
   test 'can handle missing or present images' do
     client = SemanticsClient.new
-    VCR.use_cassette("missing_image", record: :once) do
+    VCR.use_cassette("semantics_client_test/missing_image", record: :once) do
       results = client.search_for_products('monitor', 1)
       assert_nil(results['products'].first['image'])
       assert_match(/https?:\/\/.*\..*/, results['products'][1]['image'])
@@ -22,7 +22,7 @@ class SemanticsClientTest < ActiveSupport::TestCase
 
   test 'can handle missing descriptions' do
     client = SemanticsClient.new
-    VCR.use_cassette("missing_description", record: :once) do
+    VCR.use_cassette("semantics_client_test/missing_description", record: :once) do
       results = client.search_for_products('monitor', 1)
       assert_equal('', results['products'].first['description'])
     end
@@ -30,7 +30,7 @@ class SemanticsClientTest < ActiveSupport::TestCase
 
   test 'can handle multiple sellers' do
     client = SemanticsClient.new
-    VCR.use_cassette("multiple_sellers", record: :once) do
+    VCR.use_cassette("semantics_client_test/multiple_sellers", record: :once) do
       results = client.search_for_products('cord', 1)
       sellers = results['products'].first['sellers']
       assert_equal(3, sellers.count)
@@ -44,7 +44,7 @@ class SemanticsClientTest < ActiveSupport::TestCase
 
   test 'can handle a product with 0 results' do
     client = SemanticsClient.new
-    VCR.use_cassette("zero_results", record: :once) do
+    VCR.use_cassette("semantics_client_test/zero_results", record: :once) do
       results = client.search_for_products('aoeuthao2ntaohue', 1)
       assert_equal(0, results['products'].count)
     end

@@ -14,9 +14,9 @@ http_interactions:
       User-Agent:
       - OAuth gem v0.5.1
       Authorization:
-      - OAuth oauth_consumer_key="SEM3C831DE14C89CD4341DC77811C4BE7447", oauth_nonce="bgzTJoQFje3p3s1gZNb12uVZ5soA2fItzFB2nwKY0",
-        oauth_signature="C5xBVZWFyVpHl08wnycf1m854%2FU%3D", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1490564616", oauth_version="1.0"
+      - OAuth oauth_consumer_key="SEM3C831DE14C89CD4341DC77811C4BE7447", oauth_nonce="mxGiSvQooWwdmTvMspfWngm7Xw55kigJetkTDE",
+        oauth_signature="yedcZR5s3eegAp6UoJj7%2FNjtEAE%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1490565413", oauth_version="1.0"
   response:
     status:
       code: 200
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 26 Mar 2017 21:43:37 GMT
+      - Sun, 26 Mar 2017 21:56:54 GMT
       Server:
       - nginx
       Vary:
@@ -640,5 +640,5 @@ http_interactions:
         MDA4ODU5MDk5NTA5NDIiXX1dLCJ0b3RhbF9yZXN1bHRzX2NvdW50IjoxMDAw
         MDB9
     http_version: 
-  recorded_at: Sun, 26 Mar 2017 21:43:37 GMT
+  recorded_at: Sun, 26 Mar 2017 21:56:54 GMT
 recorded_with: VCR 3.0.3
