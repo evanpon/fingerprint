@@ -1,4 +1,8 @@
 class SemanticsClient 
+  # Specify the limit, even though it is currently the default, since this is how 
+  # we are paginating through the results. It gives us some protection if the API default
+  # is changed.
+  LIMIT = 10
   
   def initialize
     @client = Semantics3::Products.new(ENV['SEMANTICS_KEY'], ENV['SEMANTICS_SECRET'])
@@ -7,13 +11,18 @@ class SemanticsClient
   
   def search_for_products(search_term, page)
     response = request_products(search_term, page)
-
+    
+    search_results = {}
     if response['code'] == 'OK' 
-      parse_products_json(response)
+      search_results['products'] = parse_products_json(response)
     else 
       logger.warning("Unsuccessful response for #{search_term} on page #{page}.")
-      []
+      search_results['products'] = []
     end
+    if response['offset'].to_i + response['results_count'] >= response['total_results_count']
+      search_results['last_page'] = true
+    end
+    search_results
   end
   
   private
@@ -21,6 +30,8 @@ class SemanticsClient
     @client.products_field('search', search_term)
     @client.products_field('activeoffersonly', 1)
     @client.products_field('activesitesonly', 1)
+    @client.products_field('limit', LIMIT)
+    @client.products_field('offset', LIMIT * (page - 1))
     @client.get_products()
   end 
   

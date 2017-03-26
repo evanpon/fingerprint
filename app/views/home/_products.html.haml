@@ -1,5 +1,5 @@
 %ul
-  - @products.each do |product|
+  - @search_result_page.content.each do |product|
     %li.clear
       .image-container.left
         - image_source = product['image'] || 'http://sem3-idn.s3-website-us-east-1.amazonaws.com/b1605b889f83108adaf68d36ba3345bb,0.jpg'
@@ -11,3 +11,14 @@
           %li
             = "$#{seller['price']} at "
             = link_to(seller['name'], seller['url'])
+
+#pagination
+  - if @search_result_page&.page.to_i > 1
+    %span 
+      = link_to 'Prev Page', home_search_path(search_term: @search_result_page.search_term, page: @search_result_page.page - 1), remote: true, method: :post
+  %span
+    = @search_result_page&.page
+    
+  - if @search_result_page&.page.to_i > 0 && !@search_result_page.last_page
+    %span
+      = link_to 'Next Page', home_search_path(search_term: @search_result_page.search_term, page: @search_result_page.page + 1), remote: true, method: :post

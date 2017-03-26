@@ -18,6 +18,14 @@
 .product_image {
   width: 100%;
 }
+
+#pagination {
+  margin-left: 150px;
+  span {
+    padding-right: 10px;
+  }
+}
+
 input[type=text] {
   font-size: 20px;
   padding: 5px;

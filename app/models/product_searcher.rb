@@ -13,21 +13,14 @@ class ProductSearcher
     # Make sure we have a valid page
     page = 1 if page.to_i < 1
     
-    if result = pull_from_cache(search_term, page)
-      JSON.parse(result.content)
-    else 
-      response = @semantics_client.search_for_products(search_term, page)
+    unless search_result_page = pull_from_cache(search_term, page)
+      search_results = @semantics_client.search_for_products(search_term, page)
       # Rather than trying to update the timestamp on any existing but outdated cache rows,
       # just insert a new row. All the old rows will be reaped anyway, and this will be simpler.
-
-      # Note that it's a bit silly to take a String, parse it with JSON, and then reserialize it back into the database.
-      # Forking or replacing the Semantics gem would allow us to pull the string prior to parsing.
-      # Additionally, JSON serialization can be slow compared to Marshal or MsgPack. I'm choosing to use it here
-      # because there is no current need to optimize, and it allows for easy inspection of the data in the cache.
-      serialized_content = JSON.generate(response)
-      SearchResultPage.create(search_term: search_term, page: page, content: serialized_content)
-      response
+      search_result_page = SearchResultPage.create(search_term: search_term, page: page, content: search_results['products'],
+                                                   last_page: search_results['last_page'])
     end
+    search_result_page
   end
   
   def pull_from_cache(search_term, page=1)

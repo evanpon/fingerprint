@@ -3,10 +3,10 @@ class HomeController < ApplicationController
   end
 
   def search
-    @search_term = params[:search_term]
-    @page = params[:page].to_i
+    page = params[:page].to_i
+    page = 1 if page <= 0
     
-    @products = ProductSearcher.new.search_product(@search_term, @page)
+    @search_result_page = ProductSearcher.new.search_product(params[:search_term], page)
     respond_to do |format|
       format.html {
         render(:index)        
