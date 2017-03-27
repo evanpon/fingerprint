@@ -13,12 +13,14 @@
             = link_to(seller['name'], seller['url'])
 
 #pagination
-  - if @search_result_page&.page.to_i > 1
-    %span 
-      = link_to 'Prev Page', home_search_path(search_term: @search_result_page.search_term, page: @search_result_page.page - 1), remote: true, method: :post
-  %span
-    = @search_result_page&.page
+  - if @search_result_page && @search_result_page.content.count > 0
+    - page = @search_result_page.page
     
-  - if @search_result_page&.page.to_i > 0 && !@search_result_page.last_page
+    - if page > 1
+      %span 
+        = link_to 'Prev Page', home_search_path(search_term: @search_result_page.search_term, page: page - 1), remote: true, method: :post
     %span
-      = link_to 'Next Page', home_search_path(search_term: @search_result_page.search_term, page: @search_result_page.page + 1), remote: true, method: :post
+      = page
+    - if page > 0 && !@search_result_page.last_page
+      %span
+        = link_to 'Next Page', home_search_path(search_term: @search_result_page.search_term, page: page + 1), remote: true, method: :post
