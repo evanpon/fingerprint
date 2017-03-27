@@ -18,4 +18,4 @@ Second, a random assortment of notes that didn't get placed as comments in the c
   * Regarding pagination, I thought about implementing infinite scroll, but decided that if Amazon and Google both do not, I shouldn't as well. In fact, it made me wonder if I should take out the infinite scroll in one of my other projects. 
   
 Thanks for your time,
-- Evan
+Evan
