@@ -6,6 +6,5 @@ class CommonTerm < ApplicationRecord
   
   def strip_whitespace
     self.search_term = search_term.strip
-    puts "search term now: #{search_term}."
   end
 end
