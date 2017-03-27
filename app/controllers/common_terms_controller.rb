@@ -1,5 +1,5 @@
 class CommonTermsController < ApplicationController
-  before_filter :require_admin, except: [:login, :authenticate]
+  before_action :require_admin, except: [:login, :authenticate]
   before_action :set_common_term, only: [:show, :edit, :update, :destroy]
 
   # GET /common_terms
@@ -81,14 +81,10 @@ class CommonTermsController < ApplicationController
   
   private
     def require_admin
-      if Time.now.to_i < session[:login_expires_at].to_i &&
-         session[:token] == authenticity_token
-           true
-      else
+      if Time.now.to_i > session[:login_expires_at].to_i ||
+         session[:token] != authenticity_token
         redirect_to login_path
-        false
-      end
-        
+      end        
     end
 
     def authenticity_token
