@@ -8,6 +8,7 @@ class SearchResultPage < ApplicationRecord
   serialize :content, JSON
   
   validates :page, numericality: {only_integer: true, greater_than: 0}
+  validates :search_term, length: {maximum: 128}
   before_validation :strip_whitespace
   
   def strip_whitespace

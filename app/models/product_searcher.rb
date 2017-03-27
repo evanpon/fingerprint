@@ -22,6 +22,9 @@ class ProductSearcher
       unless search_results['error']
         # Rather than trying to update the timestamp on any existing but outdated cache rows,
         # just insert a new row. All the old rows will be reaped anyway, and this will be simpler.
+        # If the save fails, don't raise an error - continue to show results if we have them, we will just
+        # be missing a cache result for that term. This might happen if the search term is too long to be stored
+        # in MySQL. 
         search_result_page.save
       end
     end

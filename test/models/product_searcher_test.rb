@@ -34,5 +34,14 @@ class ProductSearcherTest < ActiveSupport::TestCase
     assert_equal(0, SearchResultPage.all.count) 
     WebMock.reset!    
   end
+  
+  test 'can handle a really long search term' do 
+    product_searcher = ProductSearcher.new
+    search_term = 'computer chair ' * 10
+    VCR.use_cassette("product_searcher_test/long_search_term", record: :once) do
+      results = product_searcher.search_product(search_term, 1)
+      assert_equal(10, results.content.count)
+    end
+  end
 
 end
