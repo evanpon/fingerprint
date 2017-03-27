@@ -1,9 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  search_term: MyString
-  pages: 
+  search_term: iphone
+  pages: 2
 
-two:
-  search_term: MyString
-  pages: 
