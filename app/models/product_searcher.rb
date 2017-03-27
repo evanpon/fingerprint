@@ -15,10 +15,15 @@ class ProductSearcher
     
     unless search_result_page = pull_from_cache(search_term, page)
       search_results = @semantics_client.search_for_products(search_term, page)
-      # Rather than trying to update the timestamp on any existing but outdated cache rows,
-      # just insert a new row. All the old rows will be reaped anyway, and this will be simpler.
-      search_result_page = SearchResultPage.create(search_term: search_term, page: page, content: search_results['products'],
+      search_result_page = SearchResultPage.new(search_term: search_term, page: page, content: search_results['products'],
                                                    last_page: search_results['last_page'])
+      
+      # Don't cache any unknown error results for now. For now, the likely cause is a failure to communicate with the API.
+      unless search_results['error']
+        # Rather than trying to update the timestamp on any existing but outdated cache rows,
+        # just insert a new row. All the old rows will be reaped anyway, and this will be simpler.
+        search_result_page.save
+      end
     end
     search_result_page
   end

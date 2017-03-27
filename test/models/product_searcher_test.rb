@@ -22,5 +22,17 @@ class ProductSearcherTest < ActiveSupport::TestCase
       assert_equal(2, SearchResultPage.all.count)
     end
   end
+  
+  test 'handle no Internet' do 
+    product_searcher = ProductSearcher.new
+    
+    # Simulate internet being down for all requests.
+    WebMock.stub_request(:any, /http.*/).to_raise(SocketError)
+    results = product_searcher.search_product('computer', 1)
+    assert_equal(0, results.content.count)
+    # the error should not be cached
+    assert_equal(0, SearchResultPage.all.count) 
+    WebMock.reset!    
+  end
 
 end

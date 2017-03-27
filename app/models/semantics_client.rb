@@ -13,13 +13,18 @@ class SemanticsClient
     response = request_products(search_term, page)
     
     search_results = {}
-    if response['code'] == 'OK' 
+    case response['code']
+    when 'OK'
       search_results['products'] = parse_products_json(response)
-    else 
-      logger.warning("Unsuccessful response for #{search_term} on page #{page}.")
+    when 'Unknown error'
+      search_results['error'] = 'Uknown error'
+      search_results['products'] = []
+    else
+      # There are other possible response codes from the Semantics API. For now, we aren't handling them all.
+      Rails.logger.warn("Unsuccessful response for #{search_term} on page #{page}.")
       search_results['products'] = []
     end
-    if response['offset'].to_i + response['results_count'] >= response['total_results_count']
+    if response['offset'].to_i + response['results_count'].to_i >= response['total_results_count'].to_i
       search_results['last_page'] = true
     end
     search_results
@@ -27,12 +32,19 @@ class SemanticsClient
   
   private
   def request_products(search_term, page)
-    @client.products_field('search', search_term)
-    @client.products_field('activeoffersonly', 1)
-    @client.products_field('activesitesonly', 1)
-    @client.products_field('limit', LIMIT)
-    @client.products_field('offset', LIMIT * (page - 1))
-    @client.get_products()
+    begin 
+      @client.products_field('search', search_term)
+      @client.products_field('activeoffersonly', 1)
+      @client.products_field('activesitesonly', 1)
+      @client.products_field('limit', LIMIT)
+      @client.products_field('offset', LIMIT * (page - 1))
+      @client.get_products()
+    rescue => standard_error
+      # The Semantics gem raises Errors, which is a subclass of StandardError.
+      # For simplicity here, catch all of the errors that we could reasonably recover from.
+      Rails.logger.error("Unable to request products: #{standard_error.message}")
+      {'code' => 'Unknown error'}
+    end 
   end 
   
   def parse_products_json(json_hash)
