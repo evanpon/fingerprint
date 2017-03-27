@@ -7,4 +7,11 @@ class SearchResultPage < ApplicationRecord
   # because there is no current need to optimize, and it allows for easy inspection of the data in the cache.  
   serialize :content, JSON
   
+  validates :page, numericality: {only_integer: true, greater_than: 0}
+  before_validation :strip_whitespace
+  
+  def strip_whitespace
+    self.search_term = search_term.strip
+  end
+  
 end
