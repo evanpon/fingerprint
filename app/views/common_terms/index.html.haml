@@ -1,0 +1,23 @@
+%h1 Listing Common Terms
+
+%table
+  %thead
+    %tr
+      %th Search Term
+      %th Pages
+      %th
+      %th
+      %th
+
+  %tbody
+    - @common_terms.each do |common_term|
+      %tr
+        %td= common_term.search_term
+        %td= common_term.pages
+        %td= link_to 'Show', common_term
+        %td= link_to 'Edit', edit_common_term_path(common_term)
+        %td= link_to 'Destroy', common_term, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Common Term', new_common_term_path

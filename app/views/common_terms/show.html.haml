@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Search term:
+  = @common_term.search_term
+%p
+  %b Pages:
+  = @common_term.pages
+
+= link_to 'Edit', edit_common_term_path(@common_term)
+\|
+= link_to 'Back', common_terms_path
