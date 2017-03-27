@@ -2,6 +2,8 @@ class CommonTermsController < ApplicationController
   before_action :require_admin, except: [:login, :authenticate]
   before_action :set_common_term, only: [:show, :edit, :update, :destroy]
 
+  layout 'scaffold'
+  
   # GET /common_terms
   # GET /common_terms.json
   def index
